@@ -61,7 +61,7 @@ func main() {
 		case "1000":
 			v = _1mb
 		}
-		e := rdb.Set(params["count"], v, 1000*time.Second).Err()
+		e := rdb.Set(params["count"], v, 0).Err()
 		if e != nil {
 			ctx.Status = 500
 			ctx.Write([]byte("ERROR"))
